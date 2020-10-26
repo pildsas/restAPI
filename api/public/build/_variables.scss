@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
+
+$color__dark-1: #18191a;
+$color__dark-2: #2f3640;
+$color__light-1: #d8e6eb;
+$color__grey-1: #d6d6d6;
+$color__grey-2: #b2bec3;
+$color__content-bg: #ebebeb;
+// $color__a: #4b7bec;
+$color__a: #0652dd;
+$color__liked: #4b7bec;
+$color__error-1: #fd79a8;
+$color__active: #006266;
+$color__muted: rgb(184, 181, 181);
+
+// pagination colors for light bg
+$color_pag_1: #2f3640; //pagination item active
+$color_pag_2: #d6d6d6;
+
+// pagination colors for dark bg
+$color_pag_3: #bdc3c7;
+$color_pag_4: #2980b9;
+
+$color__modal-header-1: #e74c3c;
+
+$color_btn-submit-1: #376e6f; //create
+$color_btn-submit-hover-1: #376e6fd2;
+$color_btn-submit-2: #2980b9; //edit
+$color_btn-submit-hover-2: #297fb9d0;
+$color_btn-submit-3: #c0392b; //delete
+$color_btn-submit-hover-3: #c03a2bc7;
+$color_btn-submit-4: #d8e6eb; //cancel
+$color_btn-submit-hover-4: #d1d7e0e3;
+
+$font-1: "Montserrat", sans-serif;
+$font-2: "Poppins", sans-serif;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

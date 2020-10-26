@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Log in!
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <div class="text">
+      Login
+    </div>
+
+    <form method="POST" action="{{ path('login') }}">
+      <div class="form__row">
+        <input type="email"
+          name="_email"
+          required
+          autocomplete="off"
+          id="input__email"
+          value="admin@admin.com" />
+        <span class="fas fa-user"></span>
+        <label>Email</label>
+      </div>
+      <div class="form__row">
+        <input type="password"
+          name="_password"
+          required
+          id="input__password"
+          value="123456" />
+        <span class="fas fa-lock"></span>
+        <label>Password</label>
+      </div>
+      <div class="form__row">
+        <label class="label__checkbox">
+          <input type="checkbox" checked="checked" name="_remember_me" />
+          <span class="checkmark"></span>
+
+          <div class="label__text">
+            Remember me
+          </div>
+        </label>
+      </div>
+
+      <input type="hidden"
+        name="_csrf_token"
+        value="{{ csrf_token('authenticate') }}" />
+      <button id="btn__auth">Sign in</button>
+
+      {% if error %}
+        <div class="row__box">
+          <div class="msg__error">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+          </div>
+        </div>
+      {% endif %}
+    </form>
+  </div>
+
+  {# <div class="box__login-form">
+
+        <div class="row__box">
+            <div class="text__left">Sign In</div>
+            <a href="{{ path('register') }}" class="link__register">Create new account</a>
+        </div>
+
+        <div class="row__box">
+            <form method="POST" action="{{ path('login') }}" class="form__login" novalidate>
+                    
+                <div class="row__form">
+                    <input type="email" name="_email" required placeholder="Email" autocomplete="off" id="input__email">
+                </div>
+
+                <div class="row__form">
+                    <input type="password" name="_password" required placeholder="Password" id="input__password">
+                </div>
+
+                <div class="row__form">
+                    <label class="label__checkbox">
+                        <input type="checkbox" checked="checked" name="_remember_me">
+                        <span class="checkmark"></span>
+
+                        <div class="label__text">Remember me</div>
+                    </label>
+                    <a href="" class="link__forgot">Forgot Your Password?</a>   
+                </div>
+
+                <div class="row__form">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <button class="btn__login-form" type="submit">Sign in</button>
+                </div>
+
+            </form>
+        </div>
+
+      
+       
+
+
+
+
+    </div> #}
+
+  {# <div class="box__info">
+        <div class="info__row">
+         <div class="info__text">For full functionality test please sign in with test account or register a new account</div>
+        </div>
+         <div class="info__row">
+            <span>Email:</span>
+            <span>test@gmail.com</span>
+         </div>
+
+        <div class="info__row">
+            <span>Password:</span>
+            <span>123456</span>
+        </div>
+
+        <div class="info__row">
+            <button class="btn__info">Fill credentials</button>
+        </div>
+       
+        
+       
+    </div> #}
+{% endblock %}

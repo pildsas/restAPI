@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 90%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #dde1e7;
+  text-align: center;
+}
+
+.container {
+  width: 330px;
+  padding: 40px 30px;
+  background: #dde1e7;
+  border-radius: 10px;
+  -webkit-box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+          box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+.container .text {
+  font-size: 33px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #595959;
+}
+
+.container form {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 20px;
+}
+
+.container .form__row:not(:nth-of-type(3)) {
+  height: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.container .form__row:not(:nth-of-type(3)) input {
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #dde1e7;
+  color: #595959;
+  border-radius: 25px;
+  -webkit-box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+          box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+}
+
+.container .form__row:not(:nth-of-type(3)) input:focus {
+  -webkit-box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff73;
+          box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff73;
+}
+
+.container .form__row:not(:nth-of-type(3)) span {
+  position: absolute;
+  color: #595959;
+  width: 50px;
+  line-height: 50px;
+}
+
+.container .form__row:not(:nth-of-type(3)) label {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 45px;
+  pointer-events: none;
+  color: #666666;
+}
+
+.container .form__row:not(:nth-of-type(3)) input:valid ~ label {
+  opacity: 0;
+}
+
+.form__row:nth-of-type(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.form__row:nth-of-type(3) .label__checkbox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+
+.form__row:nth-of-type(3) .label__checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.form__row:nth-of-type(3) .label__checkbox .checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+}
+
+.form__row:nth-of-type(3) .label__checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form__row:nth-of-type(3) .label__checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.form__row:nth-of-type(3) .label__checkbox .checkmark:after {
+  left: 9px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid #2f3640;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.form__row:nth-of-type(3) .label__checkbox .label__text {
+  font-weight: 300;
+  color: #595959;
+}
+
+.msg__error {
+  font-size: 0.8rem;
+  color: #d02626;
+}
+
+.forgot-pass {
+  text-align: left;
+}
+
+.forgot-pass a {
+  font-size: 16px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.forgot-pass:hover a {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: 600;
+  background: #dde1e7;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #595959;
+  -webkit-box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
+          box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
+}
+
+button:focus {
+  color: #3498db;
+  -webkit-box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+          box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+}
+
+.sign-up {
+  margin: 10px 0;
+  color: #595959;
+  font-size: 16px;
+}
+
+.sign-up a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=main.css.map */

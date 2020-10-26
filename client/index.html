@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/base.css" />
+        <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+
+        <title>Client</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <!-- ROW 1 -->
+                <div class="row">
+                    <div class="col" id="col__auth"></div>
+                </div>
+                <!-- ROW 2 -->
+                <div class="row">
+                    <!-- COL 1 -->
+                    <div class="col">
+                        <div class="box__header">
+                            <div class="text__header">Items</div>
+                        </div>
+                        <div class="box__body">
+                            <div class="box__items" id="item__items"></div>
+                        </div>
+                        <div class="box__footer">
+                            <div class="box__input">
+                                <input
+                                    type="text"
+                                    class="input__footer"
+                                    id="input__add-item"
+                                    placeholder="Enter Title"
+                                />
+                                <!-- <label>Enter Title</label> -->
+                            </div>
+                            <div class="input__icons">
+                                <i class="fas fa-plus icon__add" id="icon__add"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- COL 2 -->
+                    <div class="col">
+                        <div class="box__header" id="entries__header">
+                            <div class="text__entry-header">Entries</div>
+                        </div>
+                        <div class="box__body">
+                            <div class="box__items" id="entry__items"></div>
+                        </div>
+                        <div class="box__footer">
+                            <div class="box__input">
+                                <textarea
+                                    name=""
+                                    id="input__add-entry"
+                                    class="input__footer"
+                                    placeholder="Enter Text"
+                                ></textarea>
+                                <!-- <label>Enter Text</label> -->
+                            </div>
+                            <div class="input__icons">
+                                <div class="input__img">
+                                    <input type="file" id="input__entry-image" class="input__entry-image" />
+                                    <label for="input__entry-image" class="label__entry-image">
+                                        <i class="far fa-image icon__img" id="icon__add-img"></i>
+                                    </label>
+                                </div>
+                                <i class="fas fa-plus icon__add" id="icon__add-entry"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box__modal"></div>
+        <script type="module" src="./app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+security:
+   encoders:
+      App\Entity\User:
+         algorithm: auto
+
+   # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+   providers:
+      # used to reload user from session & other features (e.g. switch_user)
+      app_user_provider:
+         entity:
+            class: App\Entity\User
+            property: email
+   firewalls:
+      dev:
+         pattern: ^/(_(profiler|wdt)|css|images|js)/
+         security: false
+
+      api:
+         pattern: ^/api
+         stateless: true
+         anonymous: false
+         provider: app_user_provider
+         guard:
+            authenticators:
+               - lexik_jwt_authentication.jwt_token_authenticator
+
+      register:
+         pattern: ^/register
+         stateless: true
+         anonymous: true
+
+      main:
+         anonymous: lazy
+         guard:
+            authenticators:
+               - App\Security\LoginAuthenticator
+         logout:
+            path: app_logout
+            # where to redirect after logout
+            # target: app_any_route
+            target: login
+         form_login:
+            # The route name that login form submits to
+            check_path: login
+            #When user tries to acces a protected page, they are redirected here
+            login_path: login
+            # Secure login form against CSRF
+            csrf_token_generator: security.csrf.token_manager
+            # The page users are redirected to when there is no previous page stored in the session (for example, user directly access login page)
+            default_target_path: admin
+            username_parameter: _email
+         remember_me:
+            secret: "%kernel.secret%"
+            lifetime: 604800 # 1 week in seconds
+            path: /
+
+         json_login:
+            check_path: /authentication_token
+            username_path: email
+            password_path: password
+            success_handler: lexik_jwt_authentication.handler.authentication_success
+            failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+         # activate different ways to authenticate
+         # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+         # https://symfony.com/doc/current/security/impersonating_user.html
+         # switch_user: true
+
+   # Easy way to control access for large sections of your site
+   # Note: Only the *first* access control that matches will be used
+   access_control:
+      # - { path: ^/admin, roles: ROLE_ADMIN }
+      # - { path: ^/profile, roles: ROLE_USER }
+      - { path: ^/admin, roles: ROLE_ADMIN }
+      - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      # - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      # - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+   
+   hide_user_not_found: false
